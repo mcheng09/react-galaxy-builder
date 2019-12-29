@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>React Galaxy Builder</h1>
-    </div>
-  );
+import Layout from './components/layout/layout'
+
+class App extends Component {
+  render () {
+    return (
+      <div className="App">
+        <Layout />
+      </div>
+    );
+  }
 }
 
 export default App;
