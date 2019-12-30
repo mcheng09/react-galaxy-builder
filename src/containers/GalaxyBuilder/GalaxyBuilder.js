@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 
+import Galaxy from '../../components/Galaxy/Galaxy'
+
 class GalaxyBuilder extends Component {
   render () {
     return (
-      <div>Galaxy Builder Component</div>
+        <div>
+          <h1>Galaxy Builder Component</h1>
+          <Galaxy />
+        </div>
     )
   }
 }
