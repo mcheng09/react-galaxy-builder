@@ -14,7 +14,12 @@ const GalaxyControls = (props) => {
   return (
     <div className={style.GalaxyControls}>
       { controls.map((control, i) => {
-        return <GalaxyControl label={control.label} type={control.type} key={control.label + i}/>
+        return <GalaxyControl
+                  label={control.label}
+                  type={control.type}
+                  key={control.label + i}
+                  addPlanet={() => props.addPlanet(control.type)}
+                />
       })}
     </div>
   )

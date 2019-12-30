@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Galaxy from '../../components/Galaxy/Galaxy'
+import GalaxyControls from '../../components/Galaxy/GalaxyControls/GalaxyControls'
 
 class GalaxyBuilder extends Component {
 
@@ -13,11 +14,20 @@ class GalaxyBuilder extends Component {
     }
   }
 
+  //Methods
+  addPlanetHandler = (type) => {
+    const newPlanet = this.state.planets[type] + 1;
+    let updatedPlanets = { ...this.state.planets };
+    updatedPlanets[type] = newPlanet;
+    this.setState({ planets: updatedPlanets })
+  }
+
   render () {
     return (
         <div>
           <h1>Galaxy Builder Component</h1>
           <Galaxy planets={this.state.planets}/>
+          <GalaxyControls addPlanet={this.addPlanetHandler}/>
         </div>
     )
   }
