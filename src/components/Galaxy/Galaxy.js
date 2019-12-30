@@ -1,8 +1,17 @@
 import React from 'react';
 
+import Planet from './Planet/Planet'
+
 const galaxy = (props) => {
   return (
-    <div>Galaxy Component</div>
+    <div className='Galaxy'>
+      <h1>Galaxy Component</h1>
+      <Planet type='mercury' />
+      <Planet type='mars' />
+      <Planet type='mars' />
+      <Planet type='jupiter' />
+      <Planet type='saturn' />
+    </div>
   )
 }
 
