@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 import style from './Planet.module.css'
 
@@ -29,5 +30,9 @@ const planet = (props) => {
   return planet;
 
 }
+
+planet.propTypes = {
+  type: PropTypes.string.isRequired
+};
 
 export default planet;
