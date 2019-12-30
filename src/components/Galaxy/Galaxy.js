@@ -3,14 +3,17 @@ import React from 'react';
 import Planet from './Planet/Planet'
 
 const galaxy = (props) => {
+
+  const transformedPlanets = Object.keys(props.planets)
+    .map(planet => {
+      return [...Array(props.planets[planet])].map((_, i) => {
+        return <Planet key={planet + i} type={planet} />
+      });
+    });
+
   return (
     <div className='Galaxy'>
-      <h1>Galaxy Component</h1>
-      <Planet type='mercury' />
-      <Planet type='mars' />
-      <Planet type='mars' />
-      <Planet type='jupiter' />
-      <Planet type='saturn' />
+      { transformedPlanets }
     </div>
   )
 }
