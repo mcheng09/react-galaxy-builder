@@ -1,8 +1,10 @@
 import React from 'react';
 
+import style from './GalaxyControls.module.css';
+
 const GalaxyControls = (props) => {
   return (
-    <h1>Galaxy Controls Component</h1>
+    <div className={style.GalaxyControls}></div>
   )
 }
 
