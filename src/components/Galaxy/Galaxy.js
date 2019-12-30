@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Planet from './Planet/Planet';
-import GalaxyControls from './GalaxyControls/GalaxyControls';
 
 const galaxy = (props) => {
 
@@ -24,7 +23,6 @@ const galaxy = (props) => {
   return (
     <div className='Galaxy'>
       { transformedPlanets }
-      <GalaxyControls />
     </div>
   )
 }
