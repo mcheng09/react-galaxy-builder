@@ -1,3 +1,33 @@
 .GalaxyControls {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
   background: lightgrey;
+  width: 100%;
+  margin: auto;
+  padding: 16px;
+}
+
+.Container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.GalaxyControls button {
+    display: block;
+    font: inherit;
+    padding: 5px;
+    margin: 0 5px;
+    width: 80px;
+    border: 1px solid #AA6817;
+    cursor: pointer;
+    outline: none;
+}
+
+.Label {
+    padding: 10px;
+    font-weight: bold;
+    width: 80px;
 }
