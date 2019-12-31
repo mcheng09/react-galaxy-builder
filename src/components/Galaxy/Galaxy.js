@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Planet from './Planet/Planet';
+import style from './Galaxy.module.css';
 
 const galaxy = (props) => {
 
@@ -21,7 +22,7 @@ const galaxy = (props) => {
     }
 
   return (
-    <div className='Galaxy'>
+    <div className={style.Galaxy}>
       { transformedPlanets }
     </div>
   )
