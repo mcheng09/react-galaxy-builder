@@ -19,6 +19,7 @@ const GalaxyControls = (props) => {
                   type={control.type}
                   key={control.label + i}
                   addPlanet={() => props.addPlanet(control.type)}
+                  removePlanet={() => props.removePlanet(control.type)}
                 />
       })}
     </div>

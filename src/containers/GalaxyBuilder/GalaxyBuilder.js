@@ -22,12 +22,24 @@ class GalaxyBuilder extends Component {
     this.setState({ planets: updatedPlanets })
   }
 
+  removePlanetHandler = (type) => {
+    if (this.state.planets[type] > 0) {
+      const oldPlanet = this.state.planets[type] - 1;
+      let updatedPlanets = { ...this.state.planets }
+      updatedPlanets[type] = oldPlanet;
+      this.setState({ planets: updatedPlanets });
+    }
+    else {
+
+    }
+  }
+
   render () {
     return (
         <div>
           <h1>Galaxy Builder Component</h1>
           <Galaxy planets={this.state.planets}/>
-          <GalaxyControls addPlanet={this.addPlanetHandler}/>
+          <GalaxyControls addPlanet={this.addPlanetHandler} removePlanet={this.removePlanetHandler}/>
         </div>
     )
   }
