@@ -1,25 +1,25 @@
-.Mercury {
+.BluePlanet {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   background: blue;
 }
 
-.Mars {
+.RedPlanet {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   background: red;
 }
 
-.Jupiter {
+.GreenPlanet {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   background: green;
 }
 
-.Saturn {
+.YellowPlanet {
   width: 60px;
   height: 60px;
   border-radius: 50%;
