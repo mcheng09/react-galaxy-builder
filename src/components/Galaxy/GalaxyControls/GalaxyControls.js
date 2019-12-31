@@ -13,6 +13,7 @@ const controls = [
 const GalaxyControls = (props) => {
   return (
     <div className={style.GalaxyControls}>
+      <p>This galaxy will cost you <strong>${props.cost}</strong></p>
       { controls.map((control, i) => {
         return <GalaxyControl
                   label={control.label}

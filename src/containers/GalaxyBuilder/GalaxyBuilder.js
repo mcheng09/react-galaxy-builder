@@ -3,6 +3,13 @@ import React, { Component } from 'react';
 import Galaxy from '../../components/Galaxy/Galaxy'
 import GalaxyControls from '../../components/Galaxy/GalaxyControls/GalaxyControls'
 
+const PLANET_COST = {
+  blue: 100,
+  red: 200,
+  green: 300,
+  yellow: 400
+}
+
 class GalaxyBuilder extends Component {
 
   state = {
@@ -11,7 +18,8 @@ class GalaxyBuilder extends Component {
       red: 0,
       green: 0,
       yellow: 0
-    }
+    },
+    totalCost: 0
   }
 
   //Methods
@@ -19,7 +27,11 @@ class GalaxyBuilder extends Component {
     const newPlanet = this.state.planets[type] + 1;
     let updatedPlanets = { ...this.state.planets };
     updatedPlanets[type] = newPlanet;
-    this.setState({ planets: updatedPlanets })
+
+    const addedCost = PLANET_COST[type];
+    const newCost = this.state.totalCost + addedCost;
+
+    this.setState({ planets: updatedPlanets, totalCost: newCost })
   }
 
   removePlanetHandler = (type) => {
@@ -27,15 +39,22 @@ class GalaxyBuilder extends Component {
     if (oldPlanet < 0) return;
     let updatedPlanets = { ...this.state.planets }
     updatedPlanets[type] = oldPlanet;
-    this.setState({ planets: updatedPlanets });
+
+    const removedCost = PLANET_COST[type];
+    const newCost = this.state.totalCost - removedCost;
+
+    this.setState({ planets: updatedPlanets, totalCost: newCost });
   }
 
   render () {
     return (
         <div>
-          <h1>Galaxy Builder Component</h1>
           <Galaxy planets={this.state.planets}/>
-          <GalaxyControls addPlanet={this.addPlanetHandler} removePlanet={this.removePlanetHandler}/>
+          <GalaxyControls
+            cost={this.state.totalCost}
+            addPlanet={this.addPlanetHandler}
+            removePlanet={this.removePlanetHandler}
+          />
         </div>
     )
   }
