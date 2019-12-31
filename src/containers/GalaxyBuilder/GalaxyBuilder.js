@@ -23,15 +23,11 @@ class GalaxyBuilder extends Component {
   }
 
   removePlanetHandler = (type) => {
-    if (this.state.planets[type] > 0) {
-      const oldPlanet = this.state.planets[type] - 1;
-      let updatedPlanets = { ...this.state.planets }
-      updatedPlanets[type] = oldPlanet;
-      this.setState({ planets: updatedPlanets });
-    }
-    else {
-
-    }
+    const oldPlanet = this.state.planets[type] - 1;
+    if (oldPlanet < 0) return;
+    let updatedPlanets = { ...this.state.planets }
+    updatedPlanets[type] = oldPlanet;
+    this.setState({ planets: updatedPlanets });
   }
 
   render () {
