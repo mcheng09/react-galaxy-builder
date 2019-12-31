@@ -4,10 +4,10 @@ import GalaxyControl from './GalaxyControl/GalaxyControl'
 import style from './GalaxyControls.module.css';
 
 const controls = [
-  { label: 'Mercury', type:'mercury'},
-  { label: 'Mars', type:'mars'},
-  { label: 'Jupiter', type:'jupiter'},
-  { label: 'Saturn', type:'saturn'}
+  { label: 'Blue Planet', type:'blue'},
+  { label: 'Red Planet', type:'red'},
+  { label: 'Green Planet', type:'green'},
+  { label: 'Yellow Planet', type:'yellow'}
 ]
 
 const GalaxyControls = (props) => {

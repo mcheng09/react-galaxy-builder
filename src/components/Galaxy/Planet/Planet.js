@@ -7,19 +7,19 @@ const planet = (props) => {
   let planet = null;
 
   switch(props.type) {
-    case ('mercury'):
+    case ('blue'):
       planet = <div className={style.Mercury}></div>;
       break;
 
-    case ('mars'):
+    case ('red'):
       planet = <div className={style.Mars}></div>;
       break;
 
-    case ('jupiter'):
+    case ('green'):
       planet = <div className={style.Jupiter}></div>;
       break;
 
-    case ('saturn'):
+    case ('yellow'):
       planet = <div className={style.Saturn}></div>;
       break;
 

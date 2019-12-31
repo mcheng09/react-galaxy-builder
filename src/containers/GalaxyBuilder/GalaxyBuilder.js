@@ -7,10 +7,10 @@ class GalaxyBuilder extends Component {
 
   state = {
     planets: {
-      mercury: 0,
-      mars: 0,
-      jupiter: 0,
-      saturn: 0
+      blue: 0,
+      red: 0,
+      green: 0,
+      yellow: 0
     }
   }
 
