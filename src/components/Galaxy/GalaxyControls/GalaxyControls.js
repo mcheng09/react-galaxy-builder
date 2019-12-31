@@ -14,6 +14,7 @@ const GalaxyControls = (props) => {
   return (
     <div className={style.GalaxyControls}>
       <p>This galaxy will cost you <strong>${props.cost}</strong></p>
+      <button className={style.ReviewBtn}>Review Galaxy</button>
       { controls.map((control, i) => {
         return <GalaxyControl
                   label={control.label}

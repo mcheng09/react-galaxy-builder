@@ -7,3 +7,16 @@
   margin: auto;
   padding: 16px;
 }
+
+.GalaxyControls .ReviewBtn {
+  display: block;
+  font: inherit;
+  padding: 12px;
+  margin: 0 5px 32px;
+  width: 200px;
+  border: 1px solid green;
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 600;
+}
