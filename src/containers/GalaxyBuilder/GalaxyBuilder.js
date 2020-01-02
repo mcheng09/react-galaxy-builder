@@ -64,8 +64,12 @@ class GalaxyBuilder extends Component {
     this.updatedReviewState(updatedPlanets);
   }
 
-  modalHandler = () => {
+  openModalHandler = () => {
     this.setState({ openModal: true });
+  }
+
+  closeModalHandler = () => {
+    this.setState({ openModal: false });
   }
 
   render () {
@@ -80,7 +84,7 @@ class GalaxyBuilder extends Component {
 
     return (
         <div>
-          <Modal show={this.state.openModal}>
+          <Modal show={this.state.openModal} modalClosed={this.closeModalHandler}>
             <GalaxyReview planets={this.state.planets} />
           </Modal>
           <Galaxy planets={this.state.planets}/>
@@ -90,7 +94,7 @@ class GalaxyBuilder extends Component {
             addPlanet={this.addPlanetHandler}
             removePlanet={this.removePlanetHandler}
             disabled={disabledInfo}
-            openModal={this.modalHandler}
+            openModal={this.openModalHandler}
           />
         </div>
     )
