@@ -22,6 +22,7 @@ const GalaxyControls = (props) => {
                   key={control.label + i}
                   addPlanet={() => props.addPlanet(control.type)}
                   removePlanet={() => props.removePlanet(control.type)}
+                  disabled={props.disabled[control.type]}
                 />
       })}
     </div>

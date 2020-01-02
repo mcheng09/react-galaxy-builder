@@ -62,6 +62,15 @@ class GalaxyBuilder extends Component {
   }
 
   render () {
+
+    // Set planets to true/false and pass down the info
+    const disabledInfo = {
+      ...this.state.planets
+    };
+    for (let key in disabledInfo) {
+      disabledInfo[key] = disabledInfo[key] <= 0
+    }
+
     return (
         <div>
           <Galaxy planets={this.state.planets}/>
@@ -70,6 +79,7 @@ class GalaxyBuilder extends Component {
             reviewable={!this.state.reviewable}
             addPlanet={this.addPlanetHandler}
             removePlanet={this.removePlanetHandler}
+            disabled={disabledInfo}
           />
         </div>
     )
