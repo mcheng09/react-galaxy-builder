@@ -22,7 +22,8 @@ class GalaxyBuilder extends Component {
       yellow: 0
     },
     totalCost: 0,
-    reviewable: false
+    reviewable: false,
+    openModal: false
   }
 
   //Methods
@@ -63,6 +64,10 @@ class GalaxyBuilder extends Component {
     this.updatedReviewState(updatedPlanets);
   }
 
+  modalHandler = () => {
+    this.setState({ openModal: true });
+  }
+
   render () {
 
     // Set planets to true/false and pass down the info
@@ -75,7 +80,7 @@ class GalaxyBuilder extends Component {
 
     return (
         <div>
-          <Modal>
+          <Modal show={this.state.openModal}>
             <GalaxyReview planets={this.state.planets} />
           </Modal>
           <Galaxy planets={this.state.planets}/>
@@ -85,6 +90,7 @@ class GalaxyBuilder extends Component {
             addPlanet={this.addPlanetHandler}
             removePlanet={this.removePlanetHandler}
             disabled={disabledInfo}
+            openModal={this.modalHandler}
           />
         </div>
     )
