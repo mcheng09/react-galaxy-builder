@@ -19,10 +19,23 @@ class GalaxyBuilder extends Component {
       green: 0,
       yellow: 0
     },
-    totalCost: 0
+    totalCost: 0,
+    reviewable: false
   }
 
   //Methods
+  updatedReviewState (planets) {
+    const sum = Object.keys(planets)
+      .map(planet => {
+        return planets[planet]
+      })
+      .reduce((sum, el) => {
+        return sum + el;
+      }, 0)
+
+    this.setState({ reviewable: sum > 0});
+  }
+
   addPlanetHandler = (type) => {
     const newPlanet = this.state.planets[type] + 1;
     let updatedPlanets = { ...this.state.planets };
@@ -31,7 +44,8 @@ class GalaxyBuilder extends Component {
     const addedCost = PLANET_COST[type];
     const newCost = this.state.totalCost + addedCost;
 
-    this.setState({ planets: updatedPlanets, totalCost: newCost })
+    this.setState({ planets: updatedPlanets, totalCost: newCost });
+    this.updatedReviewState(updatedPlanets);
   }
 
   removePlanetHandler = (type) => {
@@ -44,6 +58,7 @@ class GalaxyBuilder extends Component {
     const newCost = this.state.totalCost - removedCost;
 
     this.setState({ planets: updatedPlanets, totalCost: newCost });
+    this.updatedReviewState(updatedPlanets);
   }
 
   render () {
@@ -52,6 +67,7 @@ class GalaxyBuilder extends Component {
           <Galaxy planets={this.state.planets}/>
           <GalaxyControls
             cost={this.state.totalCost}
+            reviewable={!this.state.reviewable}
             addPlanet={this.addPlanetHandler}
             removePlanet={this.removePlanetHandler}
           />
