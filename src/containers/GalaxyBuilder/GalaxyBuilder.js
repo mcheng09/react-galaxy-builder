@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import Galaxy from '../../components/Galaxy/Galaxy'
 import GalaxyControls from '../../components/Galaxy/GalaxyControls/GalaxyControls'
+import Modal from '../../components/UI/Modal/Modal'
+import GalaxyReview from '../../components/Galaxy/GalaxyReview/GalaxyReview'
 
 const PLANET_COST = {
   blue: 100,
@@ -73,6 +75,9 @@ class GalaxyBuilder extends Component {
 
     return (
         <div>
+          <Modal>
+            <GalaxyReview planets={this.state.planets} />
+          </Modal>
           <Galaxy planets={this.state.planets}/>
           <GalaxyControls
             cost={this.state.totalCost}
