@@ -72,6 +72,10 @@ class GalaxyBuilder extends Component {
     this.setState({ openModal: false });
   }
 
+  continueReviewHandler = () => {
+    alert('To be continued!');
+  }
+
   render () {
 
     // Set planets to true/false and pass down the info
@@ -85,7 +89,11 @@ class GalaxyBuilder extends Component {
     return (
         <div>
           <Modal show={this.state.openModal} modalClosed={this.closeModalHandler}>
-            <GalaxyReview planets={this.state.planets} />
+            <GalaxyReview
+              planets={this.state.planets}
+              closeModal={this.closeModalHandler}
+              continueReview={this.continueReviewHandler}
+              />
           </Modal>
           <Galaxy planets={this.state.planets}/>
           <GalaxyControls
