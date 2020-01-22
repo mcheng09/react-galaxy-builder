@@ -93,6 +93,7 @@ class GalaxyBuilder extends Component {
               planets={this.state.planets}
               closeModal={this.closeModalHandler}
               continueReview={this.continueReviewHandler}
+              cost={this.state.totalCost}
               />
           </Modal>
           <Galaxy planets={this.state.planets}/>
